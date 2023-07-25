@@ -1,0 +1,24 @@
+{
+  "name": "vite-react18-kanban",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite dev --open",
+    "build": "vite build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@emotion/babel-plugin": "^11.11.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "vite": "^4.4.7"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.1",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
