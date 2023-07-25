@@ -2,6 +2,7 @@ import { css } from '@emotion/react';
 import React, { useState } from 'react';
 import { KanbanCard } from './KanbanCard';
 import { KanbanNewCard } from './KanbanNewCard';
+
 const kanbanColumnStyles = css`
   flex: 1 1;
   display: flex;
@@ -31,9 +32,8 @@ const kanbanColumnStyles = css`
     }
   }
 `;
-export const KanbanColumn = ({
+export default function KanbanColumn({
   cartList = [],
-  className,
   canAddNew = false,
   onAdd,
   title,
@@ -43,11 +43,12 @@ export const KanbanColumn = ({
   setDragItem,
   onDrop,
   onRemove,
-}) => {
+}) {
   const [showAdd, setShowAdd] = useState(false);
   const handleAdd = () => {
     setShowAdd(true);
   };
+
   const handleSubmit = (newCard) => {
     onAdd && onAdd(newCard);
     // setShowAdd(false);
@@ -58,13 +59,11 @@ export const KanbanColumn = ({
         setIsDragSource(true);
       }}
       onDragOver={(evt) => {
-        console.log('over');
         evt.preventDefault();
         evt.dataTransfer.dropEffect = 'move';
         setIsDragTarget(true);
       }}
       onDragLeave={(evt) => {
-        console.log('leave');
         evt.preventDefault();
         evt.dataTransfer.dropEffect = 'none';
         setIsDragTarget(false);
@@ -74,7 +73,6 @@ export const KanbanColumn = ({
         onDrop && onDrop(e);
       }}
       onDragEnd={(evt) => {
-        console.log('dragEnd');
         evt.preventDefault();
         setIsDragSource(false);
         setIsDragTarget(false);
@@ -82,27 +80,29 @@ export const KanbanColumn = ({
       css={css`
         ${kanbanColumnStyles}
         background-color: ${bgColor};
-      `}>
+      `}
+    >
       <h2>
         {title}
         {canAddNew && (
-          <button onClick={handleAdd} disabled={showAdd}>
+          <button type="button" onClick={handleAdd} disabled={showAdd}>
             &#8853;添加新卡片
           </button>
         )}
       </h2>
       <ul>
-        {canAddNew && showAdd && <KanbanNewCard onsubmit={handleSubmit}></KanbanNewCard>}
-        {cartList.map((props, index) => (
+        {canAddNew && showAdd && <KanbanNewCard onsubmit={handleSubmit} />}
+        {cartList.map((props) => (
           <KanbanCard
             onRemove={onRemove}
             onDragStart={() => {
               setDragItem && setDragItem(props);
             }}
             {...props}
-            key={index}></KanbanCard>
+            key={props.title}
+          />
         ))}
       </ul>
     </section>
   );
-};
+}

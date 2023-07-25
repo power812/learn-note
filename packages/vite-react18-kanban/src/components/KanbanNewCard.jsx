@@ -1,5 +1,6 @@
 import { css } from '@emotion/react';
 import React, { useState, useEffect, useRef } from 'react';
+
 export const kanbanCardStyle = css`
   margin-bottom: 1rem;
   padding: 0.6rem 1rem;
@@ -16,7 +17,7 @@ export const kanbanCardTitleSyle = css`
   min-height: 3rem;
 `;
 
-export const KanbanNewCard = ({ onsubmit }) => {
+export function KanbanNewCard({ onsubmit }) {
   const inputElem = useRef(null);
   const [title, setTitle] = useState('');
   useEffect(() => {
@@ -39,7 +40,8 @@ export const KanbanNewCard = ({ onsubmit }) => {
           & > input[type="text"] {
             width: 80%;
           }
-        `}>
+        `}
+      >
         添加新卡片
       </h3>
       <div className="card-title">
@@ -47,4 +49,4 @@ export const KanbanNewCard = ({ onsubmit }) => {
       </div>
     </li>
   );
-};
+}

@@ -22,12 +22,9 @@ export const kanbanCardStatus = css`
   font-size: 0.8rem;
   color: #333;
 `;
-export const KanbanCard = ({ title, status, onDragStart, onRemove }) => {
-  const MINUTE = 60 * 1000;
-  const HOUR = 60 * MINUTE;
-  const DAY = 24 * HOUR;
-  const UPDATE_INTERVAL = MINUTE;
-
+export function KanbanCard({
+  title, status, onDragStart, onRemove,
+}) {
   const [displayTime, setDisplayTime] = useState(status);
   const isAdmin = useContext(AdminContext);
   const handleDragstart = (e) => {
@@ -37,6 +34,10 @@ export const KanbanCard = ({ title, status, onDragStart, onRemove }) => {
     onDragStart && onDragStart(e);
   };
   useEffect(() => {
+    const MINUTE = 60 * 1000;
+    const HOUR = 60 * MINUTE;
+    const DAY = 24 * HOUR;
+    const UPDATE_INTERVAL = MINUTE;
     const updateDisplayTime = () => {
       const timePassed = new Date() - new Date(status);
       let relativeTime = '刚刚';
@@ -62,13 +63,15 @@ export const KanbanCard = ({ title, status, onDragStart, onRemove }) => {
         {displayTime}
         {isAdmin && onRemove && (
           <button
+            type="button"
             onClick={() => {
               onRemove({ title });
-            }}>
+            }}
+          >
             X
           </button>
         )}
       </div>
     </li>
   );
-};
+}

@@ -1,6 +1,6 @@
 /** @jsxImportSource @emotion/react */
 import './App.css';
-import { css } from '@emotion/react';
+// import { css } from '@emotion/react';
 import React, { useState, useEffect } from 'react';
 import KanbanBoard from './KanbanBoard';
 import AdminContext from '../context/AdminContext';
@@ -34,14 +34,11 @@ function App() {
     [COLUMN_KEY_DONE]: setDoneList,
   };
   const handleAdd = (column, newCard) => {
-    console.log(column);
     updaters[column]((currentStat) => [newCard, ...currentStat]);
   };
   const handleRemove = (column, cardToRemove) => {
-    console.log(column, cardToRemove);
-    updaters[column]((currentStat) => {
-      return currentStat.filter((item) => !Object.is(item.title, cardToRemove.title));
-    });
+    updaters[column]((currentStat) => currentStat
+      .filter((item) => !Object.is(item.title, cardToRemove.title)));
   };
 
   useEffect(() => {
@@ -57,7 +54,7 @@ function App() {
     }, 1000);
   }, []);
   const [isAdmin, setIsAdmin] = useState(false);
-  const handleToggleAdmin = (e) => {
+  const handleToggleAdmin = () => {
     setIsAdmin(!isAdmin);
   };
   const handleSaveAll = () => {
@@ -69,9 +66,10 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>
-          我的看板 <button onClick={handleSaveAll}>保存所有卡片</button>
+          我的看板
+          <button type="button" onClick={handleSaveAll}>保存所有卡片</button>
           <label>
-            <input type="checkbox" value={isAdmin} onChange={handleToggleAdmin}></input>
+            <input type="checkbox" value={isAdmin} onChange={handleToggleAdmin} />
             管理员模式
           </label>
         </h1>
@@ -83,7 +81,8 @@ function App() {
           ongoingList={ongoingList}
           doneList={doneList}
           onRemove={handleRemove}
-          onAdd={handleAdd}></KanbanBoard>
+          onAdd={handleAdd}
+        />
       </AdminContext.Provider>
     </div>
   );

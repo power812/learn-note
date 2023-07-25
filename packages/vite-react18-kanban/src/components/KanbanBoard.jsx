@@ -1,8 +1,8 @@
 import { css } from '@emotion/react';
 import React, { useState } from 'react';
-import { KanbanColumn } from './KanbanColumn';
-import { KanbanCard } from './KanbanCard';
-import { KanbanNewCard } from './KanbanNewCard';
+import KanbanColumn from './KanbanColumn';
+// import { KanbanCard } from './KanbanCard';
+// import { KanbanNewCard } from './KanbanNewCard';
 
 const COLUMN_KEY_TODO = 'todo';
 const COLUMN_KEY_ONGOING = 'ongoing';
@@ -22,11 +22,13 @@ const kanbanBoardStyles = css`
   margin: 0 1rem 1rem;
 `;
 
-export default function KanbanBoard({ isLoading, todoList, ongoingList, doneList, onAdd, onRemove }) {
+export default function KanbanBoard({
+  isLoading, todoList, ongoingList, doneList, onAdd, onRemove,
+}) {
   const [dragItem, setDragItem] = useState(null);
   const [dragSource, setDragSource] = useState(null);
   const [dragTarget, setDragTarget] = useState(null);
-  const handleDrop = (evt) => {
+  const handleDrop = () => {
     if (!dragItem || !dragSource || !dragTarget || dragSource === dragTarget) {
       return;
     }
@@ -37,7 +39,7 @@ export default function KanbanBoard({ isLoading, todoList, ongoingList, doneList
   return (
     <main css={kanbanBoardStyles}>
       {isLoading ? (
-        <KanbanColumn title="读取中" bgColor={COLUMN_BG_COLORS.loading}></KanbanColumn>
+        <KanbanColumn title="读取中" bgColor={COLUMN_BG_COLORS.loading} />
       ) : (
         <>
           <KanbanColumn
@@ -52,8 +54,9 @@ export default function KanbanBoard({ isLoading, todoList, ongoingList, doneList
             onDrop={handleDrop}
             bgColor={COLUMN_BG_COLORS.todo}
             canAddNew
-            onAdd={onAdd.bind(null, COLUMN_KEY_TODO)}
-            title="待处理"></KanbanColumn>
+            onAdd={() => onAdd(COLUMN_KEY_TODO)}
+            title="待处理"
+          />
           <KanbanColumn
             setDragItem={setDragItem}
             cartList={ongoingList}
@@ -61,12 +64,12 @@ export default function KanbanBoard({ isLoading, todoList, ongoingList, doneList
               setDragSource(isSrc ? COLUMN_KEY_ONGOING : null);
             }}
             setIsDragTarget={(isTgt) => {
-              console.log('target');
               setDragTarget(isTgt ? COLUMN_KEY_ONGOING : null);
             }}
             onDrop={handleDrop}
             bgColor={COLUMN_BG_COLORS.ongoing}
-            title="处理中"></KanbanColumn>
+            title="处理中"
+          />
           <KanbanColumn
             setDragItem={setDragItem}
             cartList={doneList}
@@ -78,8 +81,9 @@ export default function KanbanBoard({ isLoading, todoList, ongoingList, doneList
               setDragTarget(isTgt ? COLUMN_KEY_DONE : null);
             }}
             bgColor={COLUMN_BG_COLORS.done}
-            onRemove={onRemove.bind(null, COLUMN_KEY_DONE)}
-            title="已完成"></KanbanColumn>
+            onRemove={() => onRemove(COLUMN_KEY_DONE)}
+            title="已完成"
+          />
         </>
       )}
     </main>
