@@ -17,5 +17,6 @@ module.exports = {
     'react/prop-types': ['error', { skipUndeclared: true }],
     'jsx-a11y/label-has-associated-control': 'off',
     'react/jsx-props-no-spreading': 'off',
+    'react/jsx-filename-extension': [2, { extensions: ['.js', '.jsx', '.ts', '.tsx'] }],
   },
 };
