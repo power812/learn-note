@@ -1,0 +1,152 @@
+{
+  "hash": "2f299f2e",
+  "browserHash": "bc81d724",
+  "optimized": {
+    "vue": {
+      "src": "../../../../../../node_modules/.pnpm/vue@3.3.4/node_modules/vue/dist/vue.runtime.esm-bundler.js",
+      "file": "vue.js",
+      "fileHash": "a2576942",
+      "needsInterop": false
+    },
+    "vitepress > @vue/devtools-api": {
+      "src": "../../../../../../node_modules/.pnpm/@vue+devtools-api@6.5.0/node_modules/@vue/devtools-api/lib/esm/index.js",
+      "file": "vitepress___@vue_devtools-api.js",
+      "fileHash": "87937afe",
+      "needsInterop": false
+    },
+    "element-plus": {
+      "src": "../../../../../../node_modules/.pnpm/element-plus@2.3.8_vue@3.3.4/node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "61cc1d7b",
+      "needsInterop": false
+    },
+    "mermaid": {
+      "src": "../../../../../../node_modules/.pnpm/mermaid@10.3.0/node_modules/mermaid/dist/mermaid.esm.mjs",
+      "file": "mermaid.js",
+      "fileHash": "936f8ef3",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "classDiagram-v2-c4607319-6CRVXPZ4": {
+      "file": "classDiagram-v2-c4607319-6CRVXPZ4.js"
+    },
+    "stateDiagram-693ac5fb-IOGOWBJP": {
+      "file": "stateDiagram-693ac5fb-IOGOWBJP.js"
+    },
+    "stateDiagram-v2-8f2bb0da-UKP7JBN4": {
+      "file": "stateDiagram-v2-8f2bb0da-UKP7JBN4.js"
+    },
+    "chunk-UCCHZOW6": {
+      "file": "chunk-UCCHZOW6.js"
+    },
+    "journeyDiagram-9f355b40-NVYM3JX5": {
+      "file": "journeyDiagram-9f355b40-NVYM3JX5.js"
+    },
+    "flowchart-elk-definition-3f2388fe-MAUJOXM4": {
+      "file": "flowchart-elk-definition-3f2388fe-MAUJOXM4.js"
+    },
+    "timeline-definition-0c903a0d-MPWJXUXE": {
+      "file": "timeline-definition-0c903a0d-MPWJXUXE.js"
+    },
+    "mindmap-definition-35a1e92c-CUCY5A4D": {
+      "file": "mindmap-definition-35a1e92c-CUCY5A4D.js"
+    },
+    "sankeyDiagram-ebb0d63f-LDHZMMME": {
+      "file": "sankeyDiagram-ebb0d63f-LDHZMMME.js"
+    },
+    "gitGraphDiagram-5269e1d6-P745AF5M": {
+      "file": "gitGraphDiagram-5269e1d6-P745AF5M.js"
+    },
+    "ganttDiagram-f2041c70-QWROGEIW": {
+      "file": "ganttDiagram-f2041c70-QWROGEIW.js"
+    },
+    "infoDiagram-3fa6ea12-IQNV6IA5": {
+      "file": "infoDiagram-3fa6ea12-IQNV6IA5.js"
+    },
+    "pieDiagram-6d9582b9-OOMLREEC": {
+      "file": "pieDiagram-6d9582b9-OOMLREEC.js"
+    },
+    "chunk-RK7XTGRF": {
+      "file": "chunk-RK7XTGRF.js"
+    },
+    "chunk-B3XCE6AU": {
+      "file": "chunk-B3XCE6AU.js"
+    },
+    "quadrantDiagram-a1c81500-UBFF6KZJ": {
+      "file": "quadrantDiagram-a1c81500-UBFF6KZJ.js"
+    },
+    "chunk-JZCJX23N": {
+      "file": "chunk-JZCJX23N.js"
+    },
+    "chunk-V3Z6J6JD": {
+      "file": "chunk-V3Z6J6JD.js"
+    },
+    "requirementDiagram-3256a2fe-M4GLEPCO": {
+      "file": "requirementDiagram-3256a2fe-M4GLEPCO.js"
+    },
+    "sequenceDiagram-25152a15-GVZKAJJN": {
+      "file": "sequenceDiagram-25152a15-GVZKAJJN.js"
+    },
+    "classDiagram-819d3ad4-D4RAHXQV": {
+      "file": "classDiagram-819d3ad4-D4RAHXQV.js"
+    },
+    "chunk-VGYNP7UB": {
+      "file": "chunk-VGYNP7UB.js"
+    },
+    "chunk-RFCDFZA6": {
+      "file": "chunk-RFCDFZA6.js"
+    },
+    "c4Diagram-0115bee6-HYUJYDXK": {
+      "file": "c4Diagram-0115bee6-HYUJYDXK.js"
+    },
+    "chunk-E6X6QGWB": {
+      "file": "chunk-E6X6QGWB.js"
+    },
+    "flowDiagram-786cd8ff-LPLUTW63": {
+      "file": "flowDiagram-786cd8ff-LPLUTW63.js"
+    },
+    "flowDiagram-v2-65161881-UQH5V3W4": {
+      "file": "flowDiagram-v2-65161881-UQH5V3W4.js"
+    },
+    "chunk-5CMWNHX2": {
+      "file": "chunk-5CMWNHX2.js"
+    },
+    "chunk-S42GDUTR": {
+      "file": "chunk-S42GDUTR.js"
+    },
+    "chunk-2BKUQ2VR": {
+      "file": "chunk-2BKUQ2VR.js"
+    },
+    "chunk-IICGCLB7": {
+      "file": "chunk-IICGCLB7.js"
+    },
+    "chunk-44HB2DXF": {
+      "file": "chunk-44HB2DXF.js"
+    },
+    "chunk-57DPXTWL": {
+      "file": "chunk-57DPXTWL.js"
+    },
+    "erDiagram-de1b0455-VVC7JCWH": {
+      "file": "erDiagram-de1b0455-VVC7JCWH.js"
+    },
+    "chunk-7HU4NNIZ": {
+      "file": "chunk-7HU4NNIZ.js"
+    },
+    "chunk-SFXM2CGH": {
+      "file": "chunk-SFXM2CGH.js"
+    },
+    "chunk-CHYOOXOE": {
+      "file": "chunk-CHYOOXOE.js"
+    },
+    "chunk-OL4ZY2BY": {
+      "file": "chunk-OL4ZY2BY.js"
+    },
+    "chunk-TBQEZFON": {
+      "file": "chunk-TBQEZFON.js"
+    },
+    "chunk-UXIASGQL": {
+      "file": "chunk-UXIASGQL.js"
+    }
+  }
+}
