@@ -1,0 +1,30 @@
+{
+  "name": "power-axios",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.js",
+  "type": "module",
+  "scripts": {
+    "build": "rollup -c",
+    "examples": "node ./examples/server.js",
+    "start": "nodemon ./sandbox/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "power",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/preset-env": "^7.22.9",
+    "@rollup/plugin-babel": "^6.0.3",
+    "@rollup/plugin-commonjs": "^25.0.3",
+    "@rollup/plugin-json": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^15.1.0",
+    "@rollup/plugin-terser": "^0.4.3",
+    "rollup": "^3.27.0",
+    "rollup-plugin-auto-external": "^2.0.0",
+    "rollup-plugin-bundle-size": "^1.0.3"
+  },
+  "dependencies": {
+    "minimist": "^1.2.8"
+  }
+}
