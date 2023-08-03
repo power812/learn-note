@@ -32,11 +32,14 @@ server = http.createServer(function (req, res) {
     pipeFileToResponse(res, '../dist/axios.js', 'text/javascript');
   } else if (pathname === '/axios.js.map') {
     pipeFileToResponse(res, '../dist/axios.js.map', 'text/javascript');
-  } else if (pathname === '/api') {
+  } else if(pathname === '/lib/request/xhr') {
+    pipeFileToResponse(res, '../lib/request/xhr.js', 'text/javascript');
+  } 
+  else if (pathname === '/api') {
     let status;
     let result;
     let data = '';
-    console.log(req.url)
+    console.log(req.params,'params')
     req.on('data', function (chunk) {
       console.log(chunk)
       data += chunk;

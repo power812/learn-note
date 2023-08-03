@@ -165,7 +165,7 @@
         request.innerHTML = JSON.stringify(options, null, 2);
         axios(options)
           .then(function (res) {
-            response.innerHTML = JSON.stringify(res.data, null, 2);
+            response.innerHTML = JSON.stringify(res, null, 2);
             error.innerHTML = "None";
           })
           .catch(function (res) {
