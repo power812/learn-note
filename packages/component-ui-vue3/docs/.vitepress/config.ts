@@ -10,11 +10,8 @@ const sidebar = {
       text: '通用',
       items: [
         { text: 'vue3 tsx用法', link: '/components/vue3Usage/' },
-        { text: '导航', items: [] },
-        { text: '反馈', items: [] },
-        { text: '数据录入', items: [] },
-        { text: '数据展示', items: [] },
-        { text: '布局', items: [] },
+        { text: 'tsconfig配置', link: '/components/tsconfig/' },
+        { text: '问题记录', link: '/components/question/' },
       ],
     },
     {

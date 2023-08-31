@@ -1,0 +1,22 @@
+{
+  "name": "cli",
+  "version": "1.0.0",
+  "description": "组件库命令行工具",
+  "main": "./lib/index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "ts-node --experimental-specifier-resolution=node   --esm  ./lib/index.ts create --type non",
+    "build": "esbuild --bundle ./lib/index.ts --format=cjs --target=node --outfile=./dist/index.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "commander": "^11.0.0",
+    "esbuild": "^0.19.2",
+    "fs-extra": "^11.1.1",
+    "inquirer": "^9.2.10",
+    "kolorist": "^1.8.0",
+    "ts-node": "^10.9.1"
+  }
+}

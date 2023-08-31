@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext", //编写代码方式
+    "moduleResolution": "node",
+    "noEmit": true, // 不產生輸出檔案
+    "allowImportingTsExtensions": true,
+    "paths": {
+      "*": ["./lib/*.ts"]
+    }
+  }
+}
