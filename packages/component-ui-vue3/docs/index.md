@@ -19,6 +19,7 @@ html.dark {
 - 代码检查: eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
 - 类型检查： typescript
 - css库：tailwindcss postcss autoprefixer sass
+- 单元测试： vitest happy-dom @testing-library/vue
 
 # vue 组件库使用说明
 

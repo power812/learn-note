@@ -1,5 +1,8 @@
 import { App } from 'vue';
-import Button from './button';
+import './style/button.scss';
+// tailwind
+import '../../styles/index.scss';
+import Button from './src/button';
 export { Button };
 export default {
   install(app: App) {
