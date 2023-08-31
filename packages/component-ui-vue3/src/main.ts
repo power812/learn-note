@@ -2,7 +2,7 @@ import { createApp } from 'vue';
 
 import App from './App.vue';
 import '../dist/style.css';
-import Button from './components/button';
+import Button from '../dist/button';
 const app = createApp(App);
 app.use(Button);
 
