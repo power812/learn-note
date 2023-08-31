@@ -40,7 +40,7 @@ const rollupOptions: RollupOptions = {
 // create package.json
 const createPackageJson = (name?: string) => {
   const fileStr = `{
-    "name": "${name ? name : 'power-ui'}",
+    "name": "@power88/${name ? name : 'power-ui'}",
     "version": "0.0.1",
     "main": "${name ? './index.umd.cjs' : './power-ui.umd.cjs'}",
     "module": "${name ? './index.js' : './power-ui.js'}" ,
@@ -49,6 +49,9 @@ const createPackageJson = (name?: string) => {
         "import": "${name ? './index.js' : './power-ui.js'}",
         "require": "${name ? './index.umd.cjs' : './power-ui.umd.cjs'}"
       }
+    },
+    "publishConfig": {
+      "access": "public"
     },
     "author": "power",
     "github": "",

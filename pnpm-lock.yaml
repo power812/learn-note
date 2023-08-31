@@ -10,6 +10,9 @@ importers:
 
   packages/component-ui-vue3:
     dependencies:
+      '@power88/power-ui':
+        specifier: ^
+        version: 0.0.1
       vue:
         specifier: ^3.3.4
         version: 3.3.4
@@ -2197,6 +2200,10 @@ packages:
       picocolors: 1.0.0
       tslib: 2.6.1
     dev: true
+
+  /@power88/power-ui@0.0.1:
+    resolution: {integrity: sha512-6V6w7H2mxWtrH3csFwAcvzJu4SsWQiLT9upKwv69j1giMUNPsj19RGdwKJVXw+LgnZKoekZVK2VoeP4pyilGKQ==}
+    dev: false
 
   /@rollup/plugin-babel@6.0.3(@babel/core@7.22.9)(rollup@3.27.0):
     resolution: {integrity: sha512-fKImZKppa1A/gX73eg4JGo+8kQr/q1HBQaCGKECZ0v4YBBv3lFqi14+7xyApECzvkLTHCifx+7ntcrvtBIRcpg==}
