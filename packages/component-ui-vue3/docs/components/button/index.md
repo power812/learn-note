@@ -1,22 +1,10 @@
-# Button 按钮
+# Vue3用法
 
 :::demo
 
 ```vue
 <template>
-  <HelloWorld></HelloWorld>
-</template>
-```
-
-:::
-
-# Test
-
-:::demo
-
-```vue
-<template>
-  <Test></Test>
+  <p-button />
 </template>
 ```
 
