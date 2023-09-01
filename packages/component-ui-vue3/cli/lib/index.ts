@@ -1,7 +1,9 @@
 import { Command } from 'commander';
+
 import { onCreate } from './commands/create';
 // create command
 const program = new Command();
+
 program
   .command('create')
   .description('创建一个组件模板或配置文件')
