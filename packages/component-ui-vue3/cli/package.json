@@ -4,6 +4,7 @@
   "description": "组件库命令行工具",
   "main": "./lib/index.ts",
   "scripts": {
+    "dev": "node ./dist/index.js",
     "dev:esbuild": "esbuild --bundle ./lib/index.ts --format=cjs --platform=node --outfile=./dist/index.js --watch",
     "cli": "node ./dist/index.js create --type hello",
     "build:esbuild": "esbuild --bundle ./lib/index.ts --format=cjs --platform=node --outfile=./dist/index.js"

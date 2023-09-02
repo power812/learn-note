@@ -87,9 +87,9 @@ const createPackageJson = (name?: string) => {
 };
 // 单组件按需构建
 const buildSingle = async (name: string) => {
-  const entry = path.resolve(componentsDir, name, 'index.tsx');
+  const entry = path.resolve(componentsDir, name, 'index.ts');
   if (!fs.existsSync(entry)) {
-    throw new Error(`${entry}: 需提供index.tsx文件`);
+    throw new Error(`${entry}: 需提供index.ts文件`);
   }
   await build({
     ...baseConfig,
@@ -131,7 +131,7 @@ const buildLib = async () => {
       const componentDir = path.resolve(componentsDir, name);
       const isDir = fs.lstatSync(componentDir).isDirectory(); // 是否是文件夹
 
-      return isDir && fs.readdirSync(componentDir).includes('index.tsx');
+      return isDir && fs.readdirSync(componentDir).includes('index.ts');
     })
     .forEach(async (name) => {
       await buildSingle(name);
