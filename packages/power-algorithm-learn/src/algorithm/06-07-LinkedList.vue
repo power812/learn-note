@@ -92,6 +92,44 @@
   LList.display();
 
   </pre>
+  <div style="color: brown; font-weight: bold">
+    <pre>
+
+
+
+    // 反转链表
+    
+    reverseList() {
+      const root = new Node('head');
+      let currentNode = this.head.next;
+      while (currentNode !== null) {
+        const next = currentNode.next;
+        currentNode.next = root.next;
+        root.next = currentNode;
+        currentNode = next;
+      }
+      this.head.next = root;
+    }
+
+
+    reverseList() {
+    let currentNode = this.head.next;
+    let previousNode = null;
+    while (currentNode !== null) {
+      console.log(currentNode);
+      // 防止丢失下一个节点
+      const next = currentNode.next;
+      // 反转
+      currentNode.next = previousNode;
+      // 交换
+      previousNode = currentNode;
+      currentNode = next;
+    }
+    this.head.next = previousNode;
+  }
+  </pre
+    >
+  </div>
   <div>单链表LList:</div>
   <pre>{{ LList }}</pre>
 </template>
@@ -110,8 +148,8 @@ class LinkList {
   constructor() {
     this.head = new Node('head');
   }
-  // query
-  display() {
+  // 遍历
+  forEach() {
     let currentNode = this.head.next;
     while (currentNode.next !== null) {
       console.log(currentNode.element);
@@ -172,22 +210,101 @@ class LinkList {
     }
     preNode.next = preNode.next.next;
   }
+  removeByIndex(index) {
+    let currentNode = this.head.next;
+    let pos = 1;
+    while (currentNode !== null && pos < index) {
+      currentNode = currentNode.next;
+      pos++;
+    }
+    if (currentNode !== null && currentNode.next !== null) {
+      currentNode.next = currentNode.next.next;
+    }
+    console.log('无法删除最后一个节点或者该节点不存在');
+    return false;
+  }
+  removeByEndIndex(index) {
+    this.reverseList();
+    this.removeByIndex(index);
+    this.reverseList();
+  }
+  /**
+   * 1) 单链表反转
+   * 2) 链表中环的检测
+   * 3) 两个有序的链表合并
+   * 4) 删除链表倒数第n个结点
+   * 5) 求链表的中间结点
+   *
+   */
+  // 反转链表
+  reverseList() {
+    const root = new Node('head');
+    let currentNode = this.head.next;
+    while (currentNode !== null) {
+      const next = currentNode.next;
+      currentNode.next = root.next;
+      root.next = currentNode;
+      currentNode = next;
+    }
+    this.head = root;
+  }
+
+  // reverseList() {
+  //   let currentNode = this.head.next;
+  //   let previousNode = null;
+  //   while (currentNode !== null) {
+  //     const next = currentNode.next;
+  //     currentNode.next = previousNode;
+  //     previousNode = currentNode;
+  //     currentNode = next;
+  //   }
+  //   this.head.next = previousNode;
+  // }
+  // 环检测
+  checkCircle() {
+    let fast = this.head.next;
+    let slow = this.head;
+    while (slow.next !== null && fast.next !== null && fast.next.next !== null) {
+      slow = slow.next;
+      fast = fast.next.next;
+      if (slow === fast) {
+        return true;
+      }
+    }
+    return false;
+  }
+  // 找中点
+  findMiddleNode() {
+    let slow = this.head;
+    let fast = this.head;
+    while (slow.next !== null && fast.next !== null && fast.next.next !== null) {
+      slow = slow.next;
+      fast = fast.next.next;
+    }
+    console.log(slow);
+    return slow;
+  }
 }
 // Test
 const LList = new LinkList();
-LList.append('chen');
-LList.append('curry');
-LList.append('sang');
-LList.append('zhao'); // chen -> curry -> sang -> zhao
-console.log(LList.findByValue('sang'));
-console.log(LList.findByIndex(3));
-console.log(LList.findPrev('sang'));
-LList.insert('wang', 'sang');
-LList.remove('sang');
-LList.display();
-</script>
-<script>
-import { getCurrentInstance } from 'vue';
-const code = getCurrentInstance();
-console.log(code);
+LList.append(1);
+LList.append(2);
+LList.append(3);
+LList.append(4); // chen -> curry -> sang -> zhao
+
+// LList.insert(3, 5);
+
+LList.forEach();
+console.log(JSON.stringify(LList, null, 2));
+
+LList.findMiddleNode();
+// 删除
+// LList.removeByIndex(2);
+LList.removeByEndIndex(2);
+// 反转
+// LList.reverseList();
+// 成环
+// const lastElement = LList.findByIndex(3);
+// lastElement.next = LList.head;
+// console.log(LList.checkCircle(), lastElement);
 </script>

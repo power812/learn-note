@@ -8,21 +8,17 @@
         class="el-menu-vertical-demo"
         text-color="#fff"
         :default-active="router.currentRoute.value.path"
-        router
-        @open="handleOpen"
-        @close="handleClose">
-        <el-sub-menu index="1">
+        router>
+        <el-sub-menu :index="String(index)" v-for="(menu, index) in menus" :key="index">
           <template #title>
-            <el-icon><location /></el-icon>
-            <span>基础篇</span>
+            <el-icon>
+              <component :is="menu.icon"></component>
+            </el-icon>
+            <span>{{ menu.title }}</span>
           </template>
           <el-menu-item-group>
-            <router-link to="/">
-              <el-menu-item index="/"> 05-数组 </el-menu-item>
-            </router-link>
-
-            <router-link to="/06-singleLinkedListAlgo">
-              <el-menu-item index="/06-singleLinkedListAlgo"> 06-单链表 </el-menu-item>
+            <router-link :to="menuItem.link" v-for="(menuItem, index) in menu.children" :key="index">
+              <el-menu-item :index="menuItem.link"> {{ menuItem.title }}</el-menu-item>
             </router-link>
           </el-menu-item-group>
         </el-sub-menu>
@@ -34,13 +30,37 @@
   </el-container>
 </template>
 <script setup>
-import { Location } from '@element-plus/icons-vue';
+import { Location, Aim } from '@element-plus/icons-vue';
 import router from './router';
-console.log(router.currentRoute.value.path);
-const handleOpen = (key, keyPath) => {
-  // console.log(key, keyPath);
-};
-const handleClose = (key, keyPath) => {
-  // console.log(key, keyPath);
-};
+const menus = [
+  {
+    title: '算法篇',
+    icon: Location,
+    link: '',
+    children: [
+      {
+        icon: '',
+        link: '/',
+        title: '05-数组',
+      },
+      {
+        icon: '',
+        link: '/06-07-LinkedList',
+        title: '06-07-链表',
+      },
+    ],
+  },
+  {
+    title: 'vue学习',
+    icon: Aim,
+    link: '',
+    children: [
+      {
+        icon: '',
+        link: '/vueUsage',
+        title: '01-基础用法',
+      },
+    ],
+  },
+];
 </script>
