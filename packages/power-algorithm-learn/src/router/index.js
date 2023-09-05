@@ -1,9 +1,9 @@
 import  {createRouter, createWebHashHistory}  from 'vue-router'
 import Array from '../05-array.md'
-const About = { template: '<div>About</div>' }
-const routes = [
+import LinkList from '../06-singleLinkedListAlgo.vue'
+export const routes = [
   { path: '/', component: Array },
-  { path: '/about', component: About },
+  { path: '/06-singleLinkedListAlgo', component: LinkList },
 ]
 
 // 3. 创建路由实例并传递 `routes` 配置
